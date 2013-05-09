@@ -4,4 +4,7 @@
 
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
+    #import <Adium/AISharedAdium.h>
+    #import <AIUtilities/AIStringUtilities.h>
+    #import <AppKit/AppKit.h>
 #endif

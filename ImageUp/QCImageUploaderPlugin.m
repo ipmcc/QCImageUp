@@ -227,7 +227,7 @@
 
 - (void)errorWithMessage:(NSString *)message forChat:(AIChat *)chat
 {
-	[adium.interfaceController handleErrorMessage:AILocalizedString(@"Error during image upload", nil)
+	[adium.interfaceController handleErrorMessage:@"Error during image upload"
 								  withDescription:message];
 	
 	[self uploadedURL:nil forChat:chat];

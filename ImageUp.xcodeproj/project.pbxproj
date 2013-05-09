@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		6A34D06B173970B30096A10A /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A34D06A173970B30096A10A /* CoreFoundation.framework */; };
 		6A34D071173970B40096A10A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A34D06F173970B40096A10A /* InfoPlist.strings */; };
+		6A34D0B0173BF0740096A10A /* QCGenericMultipartImageUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A34D0A6173BF0740096A10A /* QCGenericMultipartImageUploader.m */; };
+		6A34D0B1173BF0740096A10A /* QCImageShackImageUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A34D0A8173BF0740096A10A /* QCImageShackImageUploader.m */; };
+		6A34D0B2173BF0740096A10A /* QCImageUploaderPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A34D0AA173BF0740096A10A /* QCImageUploaderPlugin.m */; };
+		6A34D0B3173BF0740096A10A /* QCImageUploaderProgress.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A34D0AB173BF0740096A10A /* QCImageUploaderProgress.xib */; };
+		6A34D0B4173BF0740096A10A /* QCImageUploaderWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A34D0AD173BF0740096A10A /* QCImageUploaderWindowController.m */; };
+		6A34D0B5173BF0740096A10A /* QCImgurImageUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A34D0AF173BF0740096A10A /* QCImgurImageUploader.m */; };
+		6A34D0B8173BF1EC0096A10A /* Adium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A34D0B6173BF1EC0096A10A /* Adium.framework */; };
+		6A34D0B9173BF1EC0096A10A /* AIUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A34D0B7173BF1EC0096A10A /* AIUtilities.framework */; };
+		6A34D0BC173BF2BD0096A10A /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A34D0BA173BF2AA0096A10A /* AppKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +26,20 @@
 		6A34D06E173970B40096A10A /* ImageUp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImageUp-Info.plist"; sourceTree = "<group>"; };
 		6A34D070173970B40096A10A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6A34D072173970B40096A10A /* ImageUp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageUp-Prefix.pch"; sourceTree = "<group>"; };
+		6A34D0A5173BF0740096A10A /* QCGenericMultipartImageUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCGenericMultipartImageUploader.h; sourceTree = "<group>"; };
+		6A34D0A6173BF0740096A10A /* QCGenericMultipartImageUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCGenericMultipartImageUploader.m; sourceTree = "<group>"; };
+		6A34D0A7173BF0740096A10A /* QCImageShackImageUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCImageShackImageUploader.h; sourceTree = "<group>"; };
+		6A34D0A8173BF0740096A10A /* QCImageShackImageUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCImageShackImageUploader.m; sourceTree = "<group>"; };
+		6A34D0A9173BF0740096A10A /* QCImageUploaderPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCImageUploaderPlugin.h; sourceTree = "<group>"; };
+		6A34D0AA173BF0740096A10A /* QCImageUploaderPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCImageUploaderPlugin.m; sourceTree = "<group>"; };
+		6A34D0AB173BF0740096A10A /* QCImageUploaderProgress.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QCImageUploaderProgress.xib; sourceTree = "<group>"; };
+		6A34D0AC173BF0740096A10A /* QCImageUploaderWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCImageUploaderWindowController.h; sourceTree = "<group>"; };
+		6A34D0AD173BF0740096A10A /* QCImageUploaderWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCImageUploaderWindowController.m; sourceTree = "<group>"; };
+		6A34D0AE173BF0740096A10A /* QCImgurImageUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCImgurImageUploader.h; sourceTree = "<group>"; };
+		6A34D0AF173BF0740096A10A /* QCImgurImageUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCImgurImageUploader.m; sourceTree = "<group>"; };
+		6A34D0B6173BF1EC0096A10A /* Adium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Adium.framework; sourceTree = "<group>"; };
+		6A34D0B7173BF1EC0096A10A /* AIUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AIUtilities.framework; sourceTree = "<group>"; };
+		6A34D0BA173BF2AA0096A10A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,6 +47,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A34D0BC173BF2BD0096A10A /* AppKit.framework in Frameworks */,
+				6A34D0B8173BF1EC0096A10A /* Adium.framework in Frameworks */,
+				6A34D0B9173BF1EC0096A10A /* AIUtilities.framework in Frameworks */,
 				6A34D06B173970B30096A10A /* CoreFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,6 +77,9 @@
 		6A34D069173970B30096A10A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6A34D0BA173BF2AA0096A10A /* AppKit.framework */,
+				6A34D0B6173BF1EC0096A10A /* Adium.framework */,
+				6A34D0B7173BF1EC0096A10A /* AIUtilities.framework */,
 				6A34D06A173970B30096A10A /* CoreFoundation.framework */,
 			);
 			name = Frameworks;
@@ -59,6 +88,17 @@
 		6A34D06C173970B40096A10A /* ImageUp */ = {
 			isa = PBXGroup;
 			children = (
+				6A34D0A5173BF0740096A10A /* QCGenericMultipartImageUploader.h */,
+				6A34D0A6173BF0740096A10A /* QCGenericMultipartImageUploader.m */,
+				6A34D0A7173BF0740096A10A /* QCImageShackImageUploader.h */,
+				6A34D0A8173BF0740096A10A /* QCImageShackImageUploader.m */,
+				6A34D0A9173BF0740096A10A /* QCImageUploaderPlugin.h */,
+				6A34D0AA173BF0740096A10A /* QCImageUploaderPlugin.m */,
+				6A34D0AB173BF0740096A10A /* QCImageUploaderProgress.xib */,
+				6A34D0AC173BF0740096A10A /* QCImageUploaderWindowController.h */,
+				6A34D0AD173BF0740096A10A /* QCImageUploaderWindowController.m */,
+				6A34D0AE173BF0740096A10A /* QCImgurImageUploader.h */,
+				6A34D0AF173BF0740096A10A /* QCImgurImageUploader.m */,
 				6A34D06D173970B40096A10A /* Supporting Files */,
 			);
 			path = ImageUp;
@@ -126,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A34D071173970B40096A10A /* InfoPlist.strings in Resources */,
+				6A34D0B3173BF0740096A10A /* QCImageUploaderProgress.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +177,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A34D0B0173BF0740096A10A /* QCGenericMultipartImageUploader.m in Sources */,
+				6A34D0B1173BF0740096A10A /* QCImageShackImageUploader.m in Sources */,
+				6A34D0B2173BF0740096A10A /* QCImageUploaderPlugin.m in Sources */,
+				6A34D0B4173BF0740096A10A /* QCImageUploaderWindowController.m in Sources */,
+				6A34D0B5173BF0740096A10A /* QCImgurImageUploader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +262,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImageUp/ImageUp-Prefix.pch";
 				INFOPLIST_FILE = "ImageUp/ImageUp-Info.plist";
@@ -229,6 +279,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImageUp/ImageUp-Prefix.pch";
 				INFOPLIST_FILE = "ImageUp/ImageUp-Info.plist";
@@ -257,6 +311,7 @@
 				6A34D077173970B40096A10A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

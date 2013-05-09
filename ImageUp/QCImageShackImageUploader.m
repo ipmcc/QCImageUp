@@ -98,7 +98,7 @@ didStartElement:(NSString *)elementName
 		NSString *url = [[links objectForKey:@"yfrog_link"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 		[uploader uploadedURL:url forChat:chat];	
 	} else {
-		[uploader errorWithMessage:AILocalizedString(@"Unable to upload", nil) forChat:chat];
+		[uploader errorWithMessage:@"Unable to upload" forChat:chat];
 	}
 }
 

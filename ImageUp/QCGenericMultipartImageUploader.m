@@ -99,13 +99,13 @@
 	if (result.length) {
 		[self parseResponse:result];
 	} else {
-		[uploader errorWithMessage:AILocalizedString(@"Unable to upload", nil) forChat:chat];
+		[uploader errorWithMessage:@"Unable to upload" forChat:chat];
 	}
 }
 
 - (void)uploadFailed:(id)context
 {
-	[uploader errorWithMessage:AILocalizedString(@"Unable to upload", nil) forChat:chat];
+	[uploader errorWithMessage:@"Unable to upload" forChat:chat];
 }
 
 #pragma mark Image upload
@@ -133,7 +133,7 @@
 	}
 	
 	if (!imageRepresentation) {
-		[uploader errorWithMessage:AILocalizedString(@"Unable to upload", nil) forChat:chat];
+		[uploader errorWithMessage:@"Unable to upload" forChat:chat];
 		return;
 	}
 	

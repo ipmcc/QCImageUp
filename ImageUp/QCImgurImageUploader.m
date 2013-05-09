@@ -108,7 +108,7 @@ didStartElement:(NSString *)elementName
 	} else if ([status isCaseInsensitivelyEqualToString:@"ok"]) {
 		[uploader uploadedURL:[rsp valueForKeyPath:@"original_image.value"] forChat:chat];
 	} else {
-		[uploader errorWithMessage:AILocalizedString(@"Unable to upload", nil) forChat:chat];
+		[uploader errorWithMessage:@"Unable to upload" forChat:chat];
 	}
 }
 
