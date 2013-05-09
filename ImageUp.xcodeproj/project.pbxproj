@@ -21,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6A34D067173970B30096A10A /* ImageUp.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageUp.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A34D067173970B30096A10A /* ImageUp.AdiumPlugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageUp.AdiumPlugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A34D06A173970B30096A10A /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		6A34D06E173970B40096A10A /* ImageUp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImageUp-Info.plist"; sourceTree = "<group>"; };
 		6A34D070173970B40096A10A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 		6A34D068173970B30096A10A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6A34D067173970B30096A10A /* ImageUp.bundle */,
+				6A34D067173970B30096A10A /* ImageUp.AdiumPlugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -131,7 +131,7 @@
 			);
 			name = ImageUp;
 			productName = ImageUp;
-			productReference = 6A34D067173970B30096A10A /* ImageUp.bundle */;
+			productReference = 6A34D067173970B30096A10A /* ImageUp.AdiumPlugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -269,9 +269,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImageUp/ImageUp-Prefix.pch";
 				INFOPLIST_FILE = "ImageUp/ImageUp-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				INSTALL_PATH = "$(HOME)/Library/Application Support/Adium 2.0/PlugIns/";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = bundle;
+				WRAPPER_EXTENSION = AdiumPlugin;
 			};
 			name = Debug;
 		};
@@ -286,9 +286,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImageUp/ImageUp-Prefix.pch";
 				INFOPLIST_FILE = "ImageUp/ImageUp-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				INSTALL_PATH = "$(HOME)/Library/Application Support/Adium 2.0/PlugIns/";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = bundle;
+				WRAPPER_EXTENSION = AdiumPlugin;
 			};
 			name = Release;
 		};
