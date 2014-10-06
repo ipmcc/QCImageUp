@@ -71,8 +71,9 @@
 
 - (IBAction)cancel:(id)sender
 {
+    id strongSelf = self; // In case calling cancelForChat releases the last retain on self.
 	[delegate cancelForChat:chat];
-	[self closeWindow:nil];
+	[strongSelf closeWindow:nil];
 }
 
 - (BOOL)indeterminate

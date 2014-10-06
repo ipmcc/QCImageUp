@@ -116,17 +116,17 @@
 	
 	NSBitmapImageFileType bestType;
 	
-	NSData *pngRepresentation = [[image largestBitmapImageRep] representationUsingType:NSPNGFileType properties:nil];
+	//NSData *pngRepresentation = [[image largestBitmapImageRep] representationUsingType:NSPNGFileType properties:nil];
 	NSData *jpgRepresentation = [[image largestBitmapImageRep] representationUsingType:NSJPEGFileType properties:nil];
 	NSData *imageRepresentation;
 	
-	if (pngRepresentation.length > jpgRepresentation.length) {
+//	if (pngRepresentation.length > jpgRepresentation.length) {
 		bestType = NSJPEGFileType;
 		imageRepresentation = jpgRepresentation;
-	} else {
-		bestType = NSPNGFileType;
-		imageRepresentation = pngRepresentation;
-	}
+//	} else {
+//		bestType = NSPNGFileType;
+//		imageRepresentation = pngRepresentation;
+//	}
 	
 	if (imageRepresentation.length > self.maximumSize) {
 		imageRepresentation = [image representationWithFileType:bestType maximumFileSize:self.maximumSize];
@@ -138,7 +138,7 @@
 	}
 	
 	[body appendData:[[NSString stringWithFormat:@"--%@\r\n", MULTIPART_FORM_BOUNDARY] dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"image\"\r\n", self.fieldName] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"image\"; private=\"false\"\r\n", self.fieldName] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[[NSString stringWithFormat:@"Content-Type: %@\r\n\r\n", (bestType == NSJPEGFileType) ? @"image/jpeg" : @"image/png"] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:imageRepresentation];
 	[body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n", MULTIPART_FORM_BOUNDARY] dataUsingEncoding:NSUTF8StringEncoding]];

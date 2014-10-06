@@ -18,6 +18,7 @@
 		6A34D0B8173BF1EC0096A10A /* Adium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A34D0B6173BF1EC0096A10A /* Adium.framework */; };
 		6A34D0B9173BF1EC0096A10A /* AIUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A34D0B7173BF1EC0096A10A /* AIUtilities.framework */; };
 		6A34D0BC173BF2BD0096A10A /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A34D0BA173BF2AA0096A10A /* AppKit.framework */; };
+		D9FE923F19E2E66800B532BD /* QCMediaCrushImageUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FE923E19E2E66800B532BD /* QCMediaCrushImageUploader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,8 @@
 		6A34D0B6173BF1EC0096A10A /* Adium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Adium.framework; sourceTree = "<group>"; };
 		6A34D0B7173BF1EC0096A10A /* AIUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AIUtilities.framework; sourceTree = "<group>"; };
 		6A34D0BA173BF2AA0096A10A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		D9FE923D19E2E66800B532BD /* QCMediaCrushImageUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCMediaCrushImageUploader.h; sourceTree = "<group>"; };
+		D9FE923E19E2E66800B532BD /* QCMediaCrushImageUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCMediaCrushImageUploader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +102,8 @@
 				6A34D0AD173BF0740096A10A /* QCImageUploaderWindowController.m */,
 				6A34D0AE173BF0740096A10A /* QCImgurImageUploader.h */,
 				6A34D0AF173BF0740096A10A /* QCImgurImageUploader.m */,
+				D9FE923D19E2E66800B532BD /* QCMediaCrushImageUploader.h */,
+				D9FE923E19E2E66800B532BD /* QCMediaCrushImageUploader.m */,
 				6A34D06D173970B40096A10A /* Supporting Files */,
 			);
 			path = ImageUp;
@@ -179,6 +184,7 @@
 			files = (
 				6A34D0B0173BF0740096A10A /* QCGenericMultipartImageUploader.m in Sources */,
 				6A34D0B1173BF0740096A10A /* QCImageShackImageUploader.m in Sources */,
+				D9FE923F19E2E66800B532BD /* QCMediaCrushImageUploader.m in Sources */,
 				6A34D0B2173BF0740096A10A /* QCImageUploaderPlugin.m in Sources */,
 				6A34D0B4173BF0740096A10A /* QCImageUploaderWindowController.m in Sources */,
 				6A34D0B5173BF0740096A10A /* QCImgurImageUploader.m in Sources */,
@@ -202,6 +208,7 @@
 		6A34D073173970B40096A10A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ADIUM = "$(SRCROOT)/../adium-1.5.10";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -213,6 +220,10 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(ADIUM)/build/$(CONFIGURATION)\"",
+					"$(inherited)",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -226,6 +237,11 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(ADIUM)/Source",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -235,6 +251,7 @@
 		6A34D074173970B40096A10A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ADIUM = "$(SRCROOT)/../adium-1.5.10";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -247,12 +264,21 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(ADIUM)/build/$(CONFIGURATION)\"",
+					"$(inherited)",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(ADIUM)/Source",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = macosx;
 			};
@@ -269,7 +295,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImageUp/ImageUp-Prefix.pch";
 				INFOPLIST_FILE = "ImageUp/ImageUp-Info.plist";
-				INSTALL_PATH = "$(HOME)/Library/Application Support/Adium 2.0/PlugIns/";
+				INSTALL_PATH = "\"$(HOME)/Library/Application Support/Adium 2.0/PlugIns/\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = AdiumPlugin;
 			};
@@ -286,7 +312,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImageUp/ImageUp-Prefix.pch";
 				INFOPLIST_FILE = "ImageUp/ImageUp-Info.plist";
-				INSTALL_PATH = "$(HOME)/Library/Application Support/Adium 2.0/PlugIns/";
+				INSTALL_PATH = "\"$(HOME)/Library/Application Support/Adium 2.0/PlugIns/\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = AdiumPlugin;
 			};

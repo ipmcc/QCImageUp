@@ -18,6 +18,7 @@
 #import "QCImageShackImageUploader.h"
 #import "QCImgurImageUploader.h"
 #import "QCImageUploaderWindowController.h"
+#import "QCMediaCrushImageUploader.h"
 
 #import <Adium/AIContentControllerProtocol.h>
 #import <Adium/AIMenuControllerProtocol.h>
@@ -30,6 +31,8 @@
 #import <AIUtilities/AIWindowAdditions.h>
 #import <AIUtilities/AIMenuAdditions.h>
 
+NSString* QCAlwaysUploadConfigKey = @"UploadEvenIfChatSupportsImageSending";
+
 @interface QCImageUploaderPlugin()
 - (void)uploadImage:(NSImage*)image fromChat:(AIChat*)textView;
 
@@ -38,8 +41,11 @@
 @end
 
 @implementation QCImageUploaderPlugin
+
 - (void)installPlugin
 {
+    [[NSUserDefaults standardUserDefaults] registerDefaults: @{ QCAlwaysUploadConfigKey : @NO }];
+    
 	uploaders = [[NSMutableArray alloc] init];
 	windowControllers = [[NSMutableDictionary alloc] init];
 	uploadInstances = [[NSMutableDictionary alloc] init];
@@ -62,8 +68,10 @@
 	[adium.menuController addMenuItem:editMenuItem toLocation:LOC_Edit_Links];
 	[adium.preferenceController registerPreferenceObserver:self forGroup:PREF_GROUP_FORMATTING];
 	
-	[self addUploader:[QCImageShackImageUploader class]];
-	[self addUploader:[QCImgurImageUploader class]];
+//    [self addUploader:[QCImageShackImageUploader class]];
+//    [self addUploader:[QCImgurImageUploader class]];
+
+    [self addUploader:[QCMediaCrushImageUploader class]];
 }
 
 - (void)addUploader:(Class)uploader
@@ -156,6 +164,12 @@
         return;
     }
     AIMessageEntryTextView * textView = (AIMessageEntryTextView *)notification.object;
+    AIChat* chat = textView.chat;
+    if (chat.canSendImages && ![[NSUserDefaults standardUserDefaults] boolForKey: QCAlwaysUploadConfigKey])
+    {
+        return;
+    }
+    
     NSAttributedString *text = [textView textStorage];
     __block NSImage *image = nil;
     [text enumerateAttribute:NSAttachmentAttributeName inRange:NSMakeRange(0, [text length]) options:NSAttributedStringEnumerationReverse usingBlock:^(id value, NSRange range, BOOL *stop) {
